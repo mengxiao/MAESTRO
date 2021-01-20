@@ -289,7 +289,7 @@ def read_10X_mtx(matrix_file, feature_file, barcode_file, datatype, gene_column 
     matrix = sp_sparse.csc_matrix(matrix, dtype=numpy.float32)
 
     if feature_file.split('.')[-1] == 'gz' or feature_file.split('.')[-1] == 'gzip':
-        feature_in = gzip.open(feature_file, "r")
+        feature_in = gzip.open(feature_file, "rt")
     else:
         feature_in = open(feature_file, "r")
     features = feature_in.readlines()
